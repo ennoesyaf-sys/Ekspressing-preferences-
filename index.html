@@ -1,0 +1,281 @@
+Salin seluruh kode berikut ke file bernama **`index.html`**, lalu buka file tersebut di browser. Kunci jawaban dan umpan balik baru muncul setelah siswa menekan **Periksa**.
+
+```html
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173f35">
+<title>English Practice — Expressing Preferences</title>
+<style>
+:root{--ink:#183b32;--muted:#697970;--paper:#fbfaf5;--card:#fffefa;--green:#24624e;--lime:#d9ec9b;--line:#e3e6dc;--red:#a3483a;--shadow:0 14px 40px #183b3210}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:44px 22px 27px;background:var(--ink);color:white;position:relative;overflow:hidden}
+header:after{content:"A–Z";position:absolute;right:5%;top:-38px;font:bold 150px/1 Georgia,serif;color:#ffffff0c;transform:rotate(-8deg)}
+.head,main{max-width:900px;margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--lime);font-weight:750}
+.head h1{font:clamp(32px,6vw,52px)/1.05 Georgia,serif;margin:12px 0}
+.head p{max-width:600px;color:#d4e0d9;margin:0}
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.chip{border:1px solid #ffffff45;border-radius:999px;padding:5px 12px;font-size:13px;color:#f1f3e8}
+main{padding:26px 18px 64px}
+.toolbar{display:flex;gap:14px;align-items:center;justify-content:space-between;margin:0 0 20px}
+.progress-wrap{flex:1}
+.progress-label{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:7px}
+.track{height:8px;background:#e8e9df;border-radius:99px;overflow:hidden}
+.bar{height:100%;width:0;background:var(--green);transition:width .3s;border-radius:99px}
+.score{font-size:14px;font-weight:700;white-space:nowrap;background:#eef2e4;padding:8px 12px;border-radius:12px}
+.section-title{font:26px Georgia,serif;margin:34px 0 12px;display:flex;gap:10px;align-items:center}
+.section-title span{font:700 12px ui-sans-serif,system-ui;background:var(--lime);padding:5px 9px;border-radius:999px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:17px;margin:12px 0;padding:18px 19px;box-shadow:var(--shadow)}
+.qtop{display:flex;gap:12px;align-items:flex-start}
+.num{flex:none;width:29px;height:29px;display:grid;place-items:center;background:#edf2e7;border-radius:9px;font-size:13px;font-weight:800}
+.prompt{font-weight:650;flex:1;padding-top:2px}
+.rule{font-size:12px;color:var(--muted);margin:5px 0 12px 41px}
+.answer-row{display:flex;gap:9px;margin-left:41px}
+.answer-row input{min-width:0;flex:1;border:1px solid #cfd7cb;border-radius:10px;padding:11px 12px;font:inherit;color:var(--ink);background:white;outline:none}
+.answer-row input:focus{border-color:var(--green);box-shadow:0 0 0 3px #24624e1a}
+.answer-row input:disabled{background:#f1f2ed;color:#59665d}
+.check{border:0;border-radius:10px;padding:10px 15px;background:var(--green);color:white;cursor:pointer;font:inherit;font-weight:700}
+.check:hover{background:#174b39}
+.check:disabled{opacity:.5;cursor:not-allowed}
+.feedback{margin:11px 0 0 41px;padding:12px 14px;border-radius:11px;background:#f1f5e9;font-size:14px}
+.feedback[hidden]{display:none}
+.feedback.wrong{background:#fbf0eb}
+.result{font-weight:750}
+.feedback small{display:block;color:var(--muted);margin-top:5px}
+.model{display:block;margin-top:6px}
+.footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:32px;padding:17px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.reset{background:transparent;border:1px solid #bfcabd;color:var(--ink);border-radius:10px;padding:9px 14px;font:inherit;font-weight:650;cursor:pointer}
+.summary{padding:17px 20px;background:#eef2e4;border-radius:14px;margin:24px 0 4px;display:none}
+.summary.show{display:block}
+.summary strong{font-size:19px}
+@media(max-width:560px){
+  header{padding:32px 18px 24px}
+  .toolbar{align-items:flex-start}
+  .card{padding:15px 13px}
+  .answer-row{margin-left:0;flex-wrap:wrap}
+  .answer-row input{flex-basis:100%}
+  .check{width:100%}
+  .feedback,.rule{margin-left:0}
+  .footer{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="head">
+    <div class="eyebrow">Grammar practice · Unit 3</div>
+    <h1>Expressing<br>Preferences</h1>
+    <p>Susun kata menjadi kalimat yang benar. Kirim jawabanmu untuk melihat apakah sudah tepat dan membuka contoh kunci jawaban.</p>
+    <div class="chips">
+      <span class="chip">20 soal</span>
+      <span class="chip">Simple statements</span>
+      <span class="chip">Comparative preferences</span>
+      <span class="chip">Environmental topics</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="toolbar">
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Progres dijawab</span>
+        <span id="progressText">0 / 20</span>
+      </div>
+      <div class="track"><div class="bar" id="progressBar"></div></div>
+    </div>
+    <div class="score" id="score">Benar: 0</div>
+  </div>
+
+  <div id="quiz"></div>
+  <div class="summary" id="summary" aria-live="polite"></div>
+
+  <div class="footer">
+    <span>Kunci jawaban baru muncul sesudah tombol <b>Periksa</b> ditekan.</span>
+    <button class="reset" id="reset">Ulangi kuis</button>
+  </div>
+</main>
+
+<script>
+const sections = [
+  {
+    title: 'Simple Statements',
+    tag: '8 soal',
+    items: [
+      ['The kids / like / soccer very much', 'Simple present · like + noun/V-ing', 'The kids like playing soccer very much.', ['the kids like soccer very much', 'the kids like playing soccer very much']],
+      ['The family / like / travel to new places', 'Simple present · likes + V-ing', 'The family likes traveling to new places.', ['the family likes travelling to new places', 'the family likes traveling to new places', 'the family likes to travel to new places']],
+      ['Sarah / love / classical music', 'Simple present · loves + noun', 'Sarah loves classical music.', ['sarah loves classical music']],
+      ['Ms. Rani / love / cook traditional food', 'Simple present · loves + V-ing', 'Ms. Rani loves cooking traditional food.', ['ms rani loves cooking traditional food', 'ms. rani loves cooking traditional food']],
+      ['We / enjoy / mystery movies', 'Enjoy + noun', 'We enjoy mystery movies.', ['we enjoy mystery movies']],
+      ['She / enjoy / hike in the mountains', 'Enjoy + V-ing', 'She enjoys hiking in the mountains.', ['she enjoys hiking in the mountains']],
+      ['They / fond of / spend time in nature', 'Be fond of + V-ing', 'They are fond of spending time in nature.', ['they are fond of spending time in nature']],
+      ['Tia / fond of / documentaries about wildlife', 'Be fond of + noun', 'Tia is fond of documentaries about wildlife.', ['tia is fond of documentaries about wildlife']]
+    ]
+  },
+  {
+    title: 'Comparative Preferences',
+    tag: '7 soal',
+    items: [
+      ['They / prefer / watch movies at home / go to the movie theater', 'Prefer + V-ing + to + V-ing', 'They prefer watching movies at home to going to the movie theater.', ['they prefer watching movies at home to going to the movie theater', 'they prefer to watch movies at home rather than go to the movie theater']],
+      ['He / prefer / fiction novels / non-fiction books', 'Prefer + noun + to + noun', 'He prefers fiction novels to non-fiction books.', ['he prefers fiction novels to non fiction books', 'he prefers fiction novels to non-fiction books']],
+      ['Dista / like / cook at home / eat out at restaurants', 'Like + V-ing + better than + V-ing', 'Dista likes cooking at home better than eating out at restaurants.', ['dista likes cooking at home better than eating out at restaurants']],
+      ['Fika and Fahmi / like / chemistry / physics', 'Like + noun + better than + noun', 'Fika and Fahmi like chemistry better than physics.', ['fika and fahmi like chemistry better than physics']],
+      ['He / enjoy / play soccer / play basketball', 'Enjoy + V-ing + more than + V-ing', 'He enjoys playing soccer more than playing basketball.', ['he enjoys playing soccer more than playing basketball']],
+      ['Dad and I / enjoy / photography / any other hobbies', 'Enjoy + noun + more than + noun', 'Dad and I enjoy photography more than any other hobby.', ['dad and i enjoy photography more than any other hobby', 'dad and i enjoy photography more than any other hobbies']],
+      ['Ghani / would rather / study for his exam / watch television', 'Would rather + V + than + V', 'Ghani would rather study for his exam than watch television.', ['ghani would rather study for his exam than watch television']]
+    ]
+  },
+  {
+    title: 'Environmental Preferences',
+    tag: '5 soal',
+    items: [
+      ['Reduce, reuse, recycle', 'Prefer + V-ing + to + V-ing', 'I prefer reducing, reusing, and recycling to throwing things away.', ['i prefer reducing reusing and recycling to throwing things away', 'i prefer reducing reusing and recycling rather than throwing things away']],
+      ['Biking to reduce pollution', 'Prefer + V-ing + to + V-ing', 'I prefer biking to using a car because it helps reduce pollution.', ['i prefer biking to using a car because it helps reduce pollution', 'i prefer cycling to driving because it helps reduce pollution']],
+      ['Paper and plastic', 'Like + noun + better than + noun', 'I like recycling paper better than using plastic.', ['i like recycling paper better than using plastic', 'i prefer paper to plastic']],
+      ['Food and food waste', 'Prefer + V-ing + to + V-ing', 'I prefer eating food rather than wasting it.', ['i prefer eating food rather than wasting it', 'i prefer eating food to wasting it']],
+      ['Using private car/motorcycle or public transportation', 'Would rather + V + than + V', 'I would rather use public transportation than drive a private car or motorcycle.', ['i would rather use public transportation than drive a private car or motorcycle', 'i prefer using public transportation to using a private car or motorcycle']]
+    ]
+  }
+];
+
+const quiz = document.getElementById('quiz');
+let answered = 0;
+let correct = 0;
+
+function norm(text) {
+  return text.toLowerCase()
+    .replace(/[’']/g, "'")
+    .replace(/[^a-z0-9\s']/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+sections.forEach((section, sectionIndex) => {
+  const heading = document.createElement('h2');
+  heading.className = 'section-title';
+  heading.textContent = section.title;
+
+  const tag = document.createElement('span');
+  tag.textContent = section.tag;
+  heading.append(tag);
+  quiz.append(heading);
+
+  section.items.forEach((item, questionIndex) => {
+    const [prompt, rule] = item;
+    const id = `q${sectionIndex}-${questionIndex}`;
+    const card = document.createElement('section');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="qtop">
+        <span class="num">${String.fromCharCode(97 + questionIndex)}</span>
+        <div class="prompt">${prompt}</div>
+      </div>
+      <div class="rule">Pola: ${rule}</div>
+      <div class="answer-row">
+        <input id="${id}" type="text" autocomplete="off"
+          aria-label="Jawaban ${section.title}, soal ${questionIndex + 1}"
+          placeholder="Tulis kalimat lengkap dalam bahasa Inggris…">
+        <button class="check" type="button" data-id="${id}">Periksa</button>
+      </div>
+      <div class="feedback" id="f-${id}" hidden aria-live="polite"></div>
+    `;
+    quiz.append(card);
+  });
+});
+
+quiz.addEventListener('click', event => {
+  const button = event.target.closest('.check');
+  if (!button) return;
+
+  const id = button.dataset.id;
+  const [sectionIndex, questionIndex] = id.slice(1).split('-').map(Number);
+  const [, , modelAnswer, acceptedAnswers] = sections[sectionIndex].items[questionIndex];
+  const input = document.getElementById(id);
+  const feedback = document.getElementById(`f-${id}`);
+
+  if (!input.value.trim()) {
+    input.focus();
+    input.placeholder = 'Isi jawabanmu terlebih dahulu…';
+    return;
+  }
+
+  const isCorrect = acceptedAnswers.some(answer => norm(answer) === norm(input.value));
+
+  feedback.hidden = false;
+  feedback.className = `feedback ${isCorrect ? '' : 'wrong'}`;
+  feedback.innerHTML = `
+    <span class="result">${isCorrect ? '✓ Tepat! Bagus sekali.' : 'Belum tepat — perhatikan bentuk kata dan susunan kalimat.'}</span>
+    <span class="model"><b>Contoh kunci:</b> ${modelAnswer}</span>
+    <small>${isCorrect
+      ? 'Jawabanmu cocok dengan salah satu jawaban yang diterima.'
+      : 'Kamu masih bisa memperbaiki jawaban, lalu tekan Periksa lagi.'}</small>
+  `;
+
+  if (!button.dataset.counted) {
+    answered++;
+    button.dataset.counted = '1';
+  }
+
+  if (isCorrect && !button.dataset.correct) {
+    correct++;
+    button.dataset.correct = '1';
+  } else if (!isCorrect && button.dataset.correct) {
+    correct--;
+    delete button.dataset.correct;
+  }
+
+  document.getElementById('progressText').textContent = `${answered} / 20`;
+  document.getElementById('progressBar').style.width = `${answered / 20 * 100}%`;
+  document.getElementById('score').textContent = `Benar: ${correct}`;
+
+  if (answered === 20) {
+    const summary = document.getElementById('summary');
+    summary.classList.add('show');
+    summary.innerHTML = `
+      <strong>${correct} dari 20 benar</strong><br>
+      ${correct === 20
+        ? 'Sempurna! Kamu menguasai ungkapan preferensi.'
+        : 'Kuis selesai. Kamu dapat meninjau dan memperbaiki jawaban yang belum tepat.'}
+    `;
+  }
+});
+
+quiz.addEventListener('keydown', event => {
+  if (event.key === 'Enter' && event.target.matches('input')) {
+    event.target.closest('.card').querySelector('.check').click();
+  }
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+  answered = 0;
+  correct = 0;
+
+  document.querySelectorAll('.card input').forEach(input => {
+    input.value = '';
+    input.placeholder = 'Tulis kalimat lengkap dalam bahasa Inggris…';
+  });
+
+  document.querySelectorAll('.check').forEach(button => {
+    delete button.dataset.counted;
+    delete button.dataset.correct;
+  });
+
+  document.querySelectorAll('.feedback').forEach(feedback => {
+    feedback.hidden = true;
+    feedback.innerHTML = '';
+  });
+
+  document.getElementById('progressText').textContent = '0 / 20';
+  document.getElementById('progressBar').style.width = '0';
+  document.getElementById('score').textContent = 'Benar: 0';
+  document.getElementById('summary').classList.remove('show');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
+```
